@@ -21,9 +21,19 @@ public class Main {
                 ) {
                     System.out.printf("New connection accepted. Port: %d%n", clientSocket.getPort());
 
+                    out.println("Write your name");
                     final String name = in.readLine();
 
-                    out.println(String.format("Hi %s, your port is %d", name, clientSocket.getPort()));
+                    out.println("Are you child? (yes/no)");
+                    final String isChild = in.readLine();
+
+                    if (isChild.equals("yes")) {
+                        out.println(String.format("Welcome to the kids area, %s! Let's play!", name));
+                    } else if (isChild.equals("no")) {
+                        out.println(String.format("Welcome to the adult zone, %s! Have a good rest, or a good working day!", name));
+                    } else {
+                        out.println(String.format("Buy %s, your port is %d", name, clientSocket.getPort()));
+                    }
                 }
             }
         }

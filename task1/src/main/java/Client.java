@@ -7,18 +7,23 @@ import java.net.Socket;
 public class Client {
     public static void main(String[] args) throws IOException {
 
-        final var ip = "localhost";
+        final var ip = "netology.homework";
         final var port = 8089;
-
-        final var message = "Vasya";
 
         try (var clientSocket = new Socket(ip, port);
              var out = new PrintWriter(clientSocket.getOutputStream(), true);
              var in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))
         ) {
-            out.println(message);
-            var response = in.readLine();
-            System.out.println(response);
+            var response1 = in.readLine();
+            System.out.println(response1);
+            out.println("Vasya");
+
+            var response2 = in.readLine();
+            System.out.println(response2);
+            out.println("no");
+
+            var response3 = in.readLine();
+            System.out.println(response3);
         }
 
     }
