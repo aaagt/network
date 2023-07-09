@@ -9,6 +9,6 @@ allprojects {
 }
 
 subprojects {
-    group = "org.example"
+    group = "aaagt.network"
     version = "1.0-SNAPSHOT"
 }
